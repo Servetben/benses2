@@ -20,7 +20,7 @@ async def must_join_channel(bot: Client, msg: Message):
                 link = chat_info.invite_link
             try:
                 await msg.reply_photo(
-                    photo="https://te.legra.ph/file/a35aeb698a07c50f8dfc3.jpg", caption=f"» BOTU KULLANABİLMEK İÇİN ÖNCE KANALIMIZA KATILMALISINIZ. [KANALIMMIZ]({link}). KATILDIKTAN SONRA TEKRAR DENEYİNİZ !",
+                    photo="https://te.legra.ph/file/a35aeb698a07c50f8dfc3.jpg", caption=f"» BOTU KULLANABİLMEK İÇİN ÖNCE KANALIMIZA KATILMALISINIZ. [KANALIMIZ]({link}). KATILDIKTAN SONRA TEKRAR START YAPMALISINIZ !",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
