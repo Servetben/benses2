@@ -69,7 +69,7 @@ async def executor(client, message):
         evaluation = stdout
     else:
         evaluation = "Success"
-    final_output = f"**OUTPUT**:\n```{evaluation.strip()}```"
+    final_output = f"OUTPUT:\n```{evaluation.strip()}```"
     if len(final_output) > 4096:
         filename = "output.txt"
         with open(filename, "w+", encoding="utf8") as out_file:
@@ -87,7 +87,7 @@ async def executor(client, message):
         )
         await message.reply_document(
             document=filename,
-            caption=f"GİRDİ:\n`{cmd[0:980]}`\n\nÇIKTI:\n`Dökümanlara eklendi`",
+            caption=f"INPUT:\n`{cmd[0:980]}`\n\nOUTPUT:\n`Dökümanlara eklendi`",
             quote=False,
             reply_markup=keyboard,
         )
@@ -156,7 +156,7 @@ async def shellrunner(client, message):
                 )
             except Exception as err:
                 print(err)
-                await edit_or_reply(message, text=f"HATA:\n```{err}```")
+                await edit_or_reply(message, text=f"ERROR:\n```{err}```")
             output += f"**{code}**\n"
             output += process.stdout.read()[:-1].decode("utf-8")
             output += "\n"
@@ -179,7 +179,7 @@ async def shellrunner(client, message):
                 tb=exc_tb,
             )
             return await edit_or_reply(
-                message, text=f"HATA:\n```{''.join(errors)}```"
+                message, text=f"ERROR:\n```{''.join(errors)}```"
             )
         output = process.stdout.read()[:-1].decode("utf-8")
     if str(output) == "\n":
@@ -195,6 +195,6 @@ async def shellrunner(client, message):
                 caption="`Output`",
             )
             return os.remove("output.txt")
-        await edit_or_reply(message, text=f"ÇIKTI:\n```{output}```")
+        await edit_or_reply(message, text=f"OUTPUT:\n```{output}```")
     else:
-        await edit_or_reply(message, text="ÇIKTI: \n`No output`")
+        await edit_or_reply(message, text="OUTPUT: \n`No output`")
