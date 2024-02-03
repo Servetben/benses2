@@ -74,7 +74,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         ty += " BOT"
     await msg.reply(f"» DİZE OLUŞTURULUYOR {ty} SESSİON GENERATOR")
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, "Lütfen API_ID numaranızı giriniz.\n\nArdından /bot apı nizi giriniz.", filters=filters.text)
+    api_id_msg = await bot.ask(user_id, "Lütfen API_ID numaranızı giriniz.\n\nYada /iptal yazınız.", filters=filters.text)
     if await cancelled(api_id_msg):
         return
     if api_id_msg.text == "/skip":
