@@ -123,7 +123,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except (ApiIdInvalid, ApiIdInvalidError, ApiIdInvalid1):
         await msg.reply("» ᴀᴩɪ_ɪᴅ ve ᴀᴩɪ_ʜᴀsʜ numaranız telegram sistemi ile eşleşmiyor. \n\nLütfen tekrar deneyiniz..", reply_markup=InlineKeyboardMarkup(gen_button))
         return
-    except (Yanlış telefon numarası girdiniz, Telefon numaranız geçersiz, telefon numaranız hatalı.):
+    except ("Yanlış telefon numarası girdiniz, Telefon numaranız geçersiz, telefon numaranız hatalı."):
         await msg.reply("» girdiğiniz ᴩʜᴏɴᴇ_ɴᴜᴍʙᴇʀ herhangi bir telegram hesabına ait değil.\n\nLütfen tekrar deneyiniz.", reply_markup=InlineKeyboardMarkup(gen_button))
         return
     try:
