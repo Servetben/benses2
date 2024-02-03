@@ -41,7 +41,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 )
 async def executor(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text="**Ne yapmaya çalışıyorsun ?**")
+        return await edit_or_reply(message, text="Ne yapmaya çalışıyorsun ?")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
@@ -87,7 +87,7 @@ async def executor(client, message):
         )
         await message.reply_document(
             document=filename,
-            caption=f"**INPUT:**\n`{cmd[0:980]}`\n\n**ÇIKTI:**\n`Dökümanlara eklendi`",
+            caption=f"GİRDİ:\n`{cmd[0:980]}`\n\nÇIKTI:\n`Dökümanlara eklendi`",
             quote=False,
             reply_markup=keyboard,
         )
@@ -156,7 +156,7 @@ async def shellrunner(client, message):
                 )
             except Exception as err:
                 print(err)
-                await edit_or_reply(message, text=f"**HATA:**\n```{err}```")
+                await edit_or_reply(message, text=f"HATA:\n```{err}```")
             output += f"**{code}**\n"
             output += process.stdout.read()[:-1].decode("utf-8")
             output += "\n"
@@ -179,7 +179,7 @@ async def shellrunner(client, message):
                 tb=exc_tb,
             )
             return await edit_or_reply(
-                message, text=f"**HATA:**\n```{''.join(errors)}```"
+                message, text=f"HATA:\n```{''.join(errors)}```"
             )
         output = process.stdout.read()[:-1].decode("utf-8")
     if str(output) == "\n":
@@ -195,6 +195,6 @@ async def shellrunner(client, message):
                 caption="`Output`",
             )
             return os.remove("output.txt")
-        await edit_or_reply(message, text=f"**OUTPUT:**\n```{output}```")
+        await edit_or_reply(message, text=f"ÇIKTI:\n```{output}```")
     else:
-        await edit_or_reply(message, text="**OUTPUT: **\n`No output`")
+        await edit_or_reply(message, text="ÇIKTI: \n`No output`")
