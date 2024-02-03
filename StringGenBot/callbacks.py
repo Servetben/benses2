@@ -21,7 +21,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
                 await callback_query.answer()
                 await generate_session(bot, callback_query.message, old_pyro=True)
             elif query == "pyrogram_bot":
-                await callback_query.answer("» ᴛʜᴇ sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛᴇᴅ ᴡɪʟʟ ʙᴇ ᴏғ ᴩʏʀᴏɢʀᴀᴍ ᴠ2.", show_alert=True)
+                await callback_query.answer("» ᴩʏʀᴏɢʀᴀᴍ ᴠ2 oturumu oluşturalacaktır.", show_alert=True)
                 await generate_session(bot, callback_query.message, is_bot=True)
             elif query == "telethon_bot":
                 await callback_query.answer()
@@ -35,7 +35,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             await callback_query.message.reply(ERROR_MESSAGE.format(str(e)))
 
 
-ERROR_MESSAGE = "opssss ! Birşeyler yanlış gitti. \n\n**HATA** : {} " \
-            "\n\n**Lütfen sorunu iletiniz ᴛᴏ @kadirbeydiceksiniz**, Bu mesaj " \
+ERROR_MESSAGE = "opssss ! Birşeyler yanlış gitti. \n\nHATA : {} " \
+            "\n\nLütfen sorunu iletiniz ᴛᴏ @kadirbeydiceksiniz, Bu mesaj " \
             "Herhangi bir hasssas bilgi içermiyor. " \
-            " **ÇÜNKÜ BU HATA BOT TARAFINDAN KAYIT ALTINA ALINMIYOR.** !"
+            " ÇÜNKÜ BU HATA BOT TARAFINDAN KAYIT ALTINA ALINMIYOR. !"
