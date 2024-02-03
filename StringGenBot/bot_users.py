@@ -13,4 +13,4 @@ async def users_sql(_, msg: Message):
 @Client.on_message(filters.user(OWNER_ID) & filters.command("stats"))
 async def _stats(_, msg: Message):
     users = len(await get_served_users())
-    await msg.reply_text(f"» ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ sᴛʀɪɴɢ ɢᴇɴ ʙᴏᴛ :\n\n {users} ᴜsᴇʀs", quote=True)
+    await msg.reply_text(f"» Bot ait güncel istatistikler :\n\n {users} kullanıcı", quote=True)
