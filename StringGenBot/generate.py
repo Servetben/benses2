@@ -129,7 +129,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     try:
         phone_code_msg = None
         if not is_bot:
-            phone_code_msg = await bot.ask(user_id, "» Lütfen kodunuzu giriniz.\nɪғ kodunuz `12345`, **Lütfen aralarında boşluk bırakarak giriniz** `1 2 3 4 5`.", filters=filters.text, timeout=600)
+            phone_code_msg = await bot.ask(user_id, "» Lütfen kodunuzu giriniz.\n kodunuz `12345`, Lütfen aralarında boşluk bırakarak giriniz `1 2 3 4 5`.", filters=filters.text, timeout=600)
             if await cancelled(phone_code_msg):
                 return
     except TimeoutError:
@@ -174,7 +174,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"Session dizeniz {ty} burada \n\n`{string_session}` \n\noluşturan : @Sessionkeyfibot\n not: Kimse ile paylaşmayınız @benkadir"
+    text = f"Session dizeniz {ty} burada \n\n`{string_session}` \n\n Oluşturan : @Sessionkeyfibot\n not: Kimse ile paylaşmayınız @benkadir"
     try:
         if not is_bot:
             await client.send_message("me", text)
@@ -183,7 +183,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: 
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "» session dizeniz {} kayıtlı mesajlanıza eklendi.\n\nlütfen kayıtlı mesajlarınızı kontrol ediniz ! \n\nOluşturan @Sessionkeyfibot".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
+    await bot.send_message(msg.chat.id, "» session dizeniz {} kayıtlı mesajlanıza eklendi.\n\nlütfen kayıtlı mesajlarınızı kontrol ediniz ! \n\n Oluşturan @Sessionkeyfibot".format("ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴩʏʀᴏɢʀᴀᴍ"))
 
 
 async def cancelled(msg):
