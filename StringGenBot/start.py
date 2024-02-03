@@ -23,7 +23,7 @@ BOT SAHİBİ  : [@benkadir](tg://user?id={OWNER_ID}) !""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="SESSİON OLUŞTUR", callback_data="session")
+                    InlineKeyboardButton(text="SESSİON OLUŞTUR", callback_data="generate")
                 ],
                 [
                     InlineKeyboardButton("KANALIMIZ", url="https://t.me/dilemin"),
