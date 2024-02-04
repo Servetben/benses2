@@ -15,9 +15,8 @@ async def start(bot: Client, msg: Message):
         text=f"""MERHABA {msg.from_user.mention},
 
 Benim adım {me2},
-string generator bot.
-Tamamen güvenlidir.
-Hata yok.
+Pyrogram ve telethon dize oturumu oluşturmak için tasarlandım.
+Dize oturumu oluşturmak için aşağıdaki butuna basınız.
 
 BOT SAHİBİ  : [@benkadir](tg://user?id={OWNER_ID}) !""",
         reply_markup=InlineKeyboardMarkup(
