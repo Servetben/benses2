@@ -34,7 +34,7 @@ import config
 
 
 
-ask_ques = "» ▷ bir oturum dizesi seçin ✔️ : :"
+ask_ques = "» Lütfen bir oturum dizesi seçiniz :"
 buttons_ques = [
     [
         InlineKeyboardButton("PYROGRAM", callback_data="pyrogram1"),
